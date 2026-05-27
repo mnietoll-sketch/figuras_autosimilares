@@ -2,7 +2,7 @@
 #include "turtlec.h"
 
 void fractalTree(Turtle *turtle, float length, int depth){
-	if(depth <= 0 || legth < 5.0f)
+	if(depth <= 0 || length < 5.0f)
 		return;
 
 	float reduction = 0.7f;
