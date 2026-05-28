@@ -5,6 +5,11 @@ void fractalTree(Turtle *turtle, float length, int depth, float reduction, float
 	if(depth <= 0 || length < 5.0f)
 		return;
 
+	if(depth < 3){
+		turtleSetColor(turtle, 0, 255, 0);
+	} else{
+		turtleSetColor(turtle, 155, 75, 0);
+	}
 	turtleForward(turtle, length);
 	
 	turtleLeft(turtle, angle);

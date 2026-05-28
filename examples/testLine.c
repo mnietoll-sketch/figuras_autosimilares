@@ -13,10 +13,10 @@ int main(void){
 	turtleGoTo(t, 150.0f, 300.0f);
 	turtlePenDown(t);
 
-	turtleSetColor(t, 255, 100, 0);
+	turtleSetColor(t, 155, 75, 0);
 	turtleSetSpeed(t, 10.0f);
 	
-	fractalTree(t, 30.0f, 10, 0.9f, 45);
+	fractalTree(t, 100.0f, 10, 0.7f, 60);
 
 	turtleAppRun(app);
 	turtleAppDestroy(app);
