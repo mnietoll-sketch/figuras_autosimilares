@@ -3,6 +3,6 @@
 
 #include "turtlec.h"
 
-void fractalTree(Turtle *turtle, float length, int depth);
+void fractalTree(Turtle *turtle, float length, int depth, float reduction);
 
 #endif

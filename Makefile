@@ -5,7 +5,7 @@ LDLIBS = -lcsfml-graphics -lcsfml-window -lcsfml-system -lm
 all: testLine
 
 testLine: turtlec.c examples/testLine.c turtlec.h draw.h draw.c
-	$(CC) $(CFLAGS) turtlec.c examples/testLine.c draw.c -g -o testLine $(LDLIBS)
+	$(CC) $(CFLAGS) examples/testLine.c draw.c turtlec.c -g -o testLine $(LDLIBS)
 
-clean:
+clear:
 	rm -f testLine

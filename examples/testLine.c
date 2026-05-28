@@ -10,13 +10,13 @@ int main(void){
 	Turtle *t = turtleAppGetTurtle(app);
 	
 	turtlePenUp(t);
-	turtleGoTo(t, 150.0f, 200.0f);
+	turtleGoTo(t, 150.0f, 300.0f);
 	turtlePenDown(t);
 
 	turtleSetColor(t, 255, 100, 0);
 	turtleSetSpeed(t, 10.0f);
 	
-	fractalTree(t, 100.0f, 5);
+	fractalTree(t, 50.0f, 25, 0.7f);
 
 	turtleAppRun(app);
 	turtleAppDestroy(app);
