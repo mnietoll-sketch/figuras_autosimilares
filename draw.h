@@ -11,6 +11,8 @@ struct color{
 
 struct color color_sub(struct color to, struct color from);
 
+struct color color_div(struct color c, float f);
+
 void fractalTree(Turtle *turtle, float length, int depth, float reduction, float angle);
 
 void fractalTreeVariation(Turtle *turtle, float length, int depth, struct color from, struct color to);

@@ -9,6 +9,14 @@ struct color color_sub(struct color to, struct color from){
 	result.b = to.b - from.b;
 }
 
+struct color color_div(struct color c, float f){
+	struct color result;
+
+	result.r = c.r / f;
+	result.g = c.g / f;
+	result.b = c.b / f;
+}
+
 void fractalTree(Turtle *turtle, float length, int depth, float reduction, float angle){
 	if(depth <= 0 || length < 5.0f)
 		return;
@@ -35,15 +43,15 @@ void fractalTreeVariation(Turtle *turtle, float length, int depth, struct color 
 	if(depth <= 0 || length < 5.0f)
 		return;
 
-	struct color grad = color_sub(to, from);
+	struct color grad = color_div(color_sub(to, from), 2);
 
 	turtleForward(turtle, length);
 	
 	turtleLeft(turtle, 30);
-	fractalTree(turtle, length * 0.7, depth - 1);
+	fractalTree(turtle, length * 0.7, depth - 1, , );
 	
 	turtleRight(turtle, 60);
-	fractalTree(turtle, length * 0.7, depth - 1);
+	fractalTree(turtle, length * 0.7, depth - 1, , );
 	
 	turtleLeft(turtle, 30);
 	turtleBackward(turtle, length);
