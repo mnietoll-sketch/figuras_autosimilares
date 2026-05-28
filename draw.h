@@ -7,10 +7,9 @@ struct color{
 	float r;
 	float g;
 	float b;
-}
+};
 
-
-struct color color_init(void);
+struct color color_init(float r, float g, float b);
 
 struct color color_sum(struct color c1, struct color c2);
 

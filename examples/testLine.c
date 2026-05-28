@@ -16,7 +16,11 @@ int main(void){
 	turtleSetColor(t, 155, 75, 0);
 	turtleSetSpeed(t, 10.0f);
 	
-	fractalTree(t, 100.0f, 10, 0.8f, 30);
+	// fractalTree(t, 100.0f, 10, 0.8f, 30);
+	struct color from, to;
+	from = color_init(150.0f, 75.0f, 0.0f);
+	to = color_init(0.0f, 255.0f, 0.0f);
+	fractalTreeVariation(t, 100.0f, 10, from, to);
 
 	turtleAppRun(app);
 	turtleAppDestroy(app);

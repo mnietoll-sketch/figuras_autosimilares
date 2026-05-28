@@ -2,11 +2,11 @@
 #include "turtlec.h"
 
 
-struct color color_init(void){
+struct color color_init(float r, float g, float b){
 	struct color result;
-	result.r = 0;
-	result.g = 0;
-	result.b = 0;
+	result.r = r;
+	result.g = g;
+	result.b = b;
 	return result;
 }
 
@@ -41,7 +41,7 @@ void fractalTree(Turtle *turtle, float length, int depth, float reduction, float
 		return;
 
 	if(depth < 5)
-		turtleSetColor(turtle, 0, 255, 0);
+		turtleSetColor(turtle, 0.0f, 255.0f, 0.0f);
 
 	turtleForward(turtle, length);
 	
@@ -52,7 +52,7 @@ void fractalTree(Turtle *turtle, float length, int depth, float reduction, float
 	fractalTree(turtle, length * reduction, depth - 1, reduction, angle);
 	
 	if(depth >= 5)
-		turtleSetColor(turtle, 150, 75, 0);
+		turtleSetColor(turtle, 150.0f, 75.0f, 0.0f);
 
 	turtleLeft(turtle, angle);
 	turtleBackward(turtle, length);
@@ -63,7 +63,7 @@ void fractalTreeVariation(Turtle *turtle, float length, int depth, struct color 
 		return;
 
 	struct color grad;
-	grad = color_init();
+	grad = color_init(0.0f, 0.0f, 0.0f);
 	if(depth >= 2)
 		grad = color_div(color_sub(to, from), depth - 1);
 	
@@ -71,12 +71,12 @@ void fractalTreeVariation(Turtle *turtle, float length, int depth, struct color 
 	turtleForward(turtle, length);
 	
 	turtleLeft(turtle, 30);
-	fractalTree(turtle, length * 0.7, depth - 1, color_sum(from + grad), to);
+	fractalTreeVariation(turtle, length * 0.7, depth - 1, color_sum(from, grad), to);
 	
 	turtleRight(turtle, 60);
-	fractalTree(turtle, length * 0.7, depth - 1, color_sum(from + grad), to);
+	fractalTreeVariation(turtle, length * 0.7, depth - 1, color_sum(from, grad), to);
 	
-	turtleSetColor(turtle, from.r, from.g, from.b)
+	turtleSetColor(turtle, from.r, from.g, from.b);
 	turtleLeft(turtle, 30);
 	turtleBackward(turtle, length);
 }
