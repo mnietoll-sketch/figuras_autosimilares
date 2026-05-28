@@ -9,7 +9,12 @@ struct color{
 	float b;
 }
 
-struct color color_sub(struct color to, struct color from);
+
+struct color color_init(void);
+
+struct color color_sum(struct color c1, struct color c2);
+
+struct color color_sub(struct color c1, struct color c2);
 
 struct color color_div(struct color c, float f);
 
