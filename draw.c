@@ -35,7 +35,7 @@ void fractalTreeVariation(Turtle *turtle, float length, int depth, struct color 
 	if(depth <= 0 || length < 5.0f)
 		return;
 
-	struct color grad = color_sub(to - from);
+	struct color grad = color_sub(to, from);
 
 	turtleForward(turtle, length);
 	
