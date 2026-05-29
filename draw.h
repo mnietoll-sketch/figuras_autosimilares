@@ -23,4 +23,5 @@ void fractalTreeVariation(Turtle *turtle, float length, int depth, struct color 
 
 void levy(Turtle *turtle, float length, int depth);
 
+void levyVariation(Turtle *turtle, float length, int depth, struct color from, struct color to);
 #endif

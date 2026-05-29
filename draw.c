@@ -95,3 +95,24 @@ void levy(Turtle *turtle, float length, int depth){
 	
 	turtleLeft(turtle, 45.0f);
 }
+
+
+void levyVariation(Turtle *turtle, float length, int depth, struct color from, struct color to){
+	if(depth == 0){
+		turtleSetColor(turtle, from.r, from.g, from.b);
+		turtleForward(turtle, length);
+		return ;
+	}
+
+	struct color grad, mid;
+	grad = color_div(color_sub(to, from), 2);
+	mid = color_sum(from, grad);
+
+	turtleLeft(turtle, 45.0f);
+	levyVariation(turtle, length / sqrt(2), depth - 1, from, mid);
+
+	turtleRight(turtle, 90.0f);
+	levyVariation(turtle, length / sqrt(2), depth - 1, mid, to);
+	
+	turtleLeft(turtle, 45.0f);
+}

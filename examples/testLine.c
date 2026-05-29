@@ -24,8 +24,15 @@ int main(void){
 	to = color_init(0.0f, 255.0f, 0.0f);
 	fractalTreeVariation(t, 100.0f, 10, from, to);
 	*/
-
+	
+	/*
 	levy(t, 200.0f, 6);
+	*/
+
+	struct color from, to;
+	from = color_init(255.0f, 0.0f, 0.0f);
+	to = color_init(0.0f, 255.0f, 255.0f);
+	levyVariation(t, 200.0f, 6, from, to);
 
 	turtleAppRun(app);
 	turtleAppDestroy(app);
