@@ -1,6 +1,6 @@
 #include "draw.h"
 #include "turtlec.h"
-
+#include <math.h>
 
 struct color color_init(float r, float g, float b){
 	struct color result;
@@ -70,13 +70,28 @@ void fractalTreeVariation(Turtle *turtle, float length, int depth, struct color 
 	turtleSetColor(turtle, from.r, from.g, from.b);
 	turtleForward(turtle, length);
 	
-	turtleLeft(turtle, 30);
+	turtleLeft(turtle, 30.0f);
 	fractalTreeVariation(turtle, length * 0.7, depth - 1, color_sum(from, grad), to);
 	
-	turtleRight(turtle, 60);
+	turtleRight(turtle, 60.0f);
 	fractalTreeVariation(turtle, length * 0.7, depth - 1, color_sum(from, grad), to);
 	
 	turtleSetColor(turtle, from.r, from.g, from.b);
-	turtleLeft(turtle, 30);
+	turtleLeft(turtle, 30.0f);
 	turtleBackward(turtle, length);
+}
+
+void levy(Turtle *turtle, float length, int depth){
+	if(depth == 0){
+		turtleForward(turtle, length);
+		return ;
+	}
+
+	turtleLeft(turtle, 45.0f);
+	levy(turtle, length / sqrt(2), depth - 1);
+
+	turtleRight(turtle, 90.0f);
+	levy(turtle, length / sqrt(2), depth - 1);
+	
+	turtleLeft(turtle, 45.0f);
 }
