@@ -32,7 +32,7 @@ int main(void){
 	struct color from, to;
 	from = color_init(255.0f, 0.0f, 0.0f);
 	to = color_init(0.0f, 255.0f, 255.0f);
-	levyVariation(t, 200.0f, 6, from, to);
+	levyVariation(t, 200.0f, 10, from, to);
 
 	turtleAppRun(app);
 	turtleAppDestroy(app);
