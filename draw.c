@@ -36,6 +36,22 @@ struct color color_div(struct color c, float f){
 	return result;
 }
 
+void fractalTree(Turtle *turtle, float length, int depth){
+	if(depth <= 0 || length < 5.0f)
+		return;
+
+	turtleForward(turtle, length);
+	
+	turtleLeft(turtle, 30);
+	fractalTree(turtle, length * 0.7, depth - 1);
+	
+	turtleRight(turtle, 60);
+	fractalTree(turtle, length * 0.7, depth - 1);
+	
+	turtleLeft(turtle, 30);
+	turtleBackward(turtle, length);
+}
+
 void fractalTreeGeneralized(Turtle *turtle, float length, int depth, float reduction, float angle){
 	if(depth <= 0 || length < 5.0f)
 		return;

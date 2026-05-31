@@ -16,7 +16,8 @@ int main(void){
 	turtleSetColor(t, 255, 150, 0);
 	turtleSetSpeed(t, 10.0f);
 	
-	 fractalTreeGeneralized(t, 100.0f, 10, 0.8f, 30);
+	fractalTree(t, 100.0f, 10);
+	//fractalTreeGeneralized(t, 100.0f, 10, 0.8f, 30);
 	
 	/*
 	struct color from, to;
