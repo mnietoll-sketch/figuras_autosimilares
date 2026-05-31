@@ -10,7 +10,7 @@ int main(void){
 	Turtle *t = turtleAppGetTurtle(app);
 	
 	turtlePenUp(t);
-	turtleGoTo(t, 150.0f, 300.0f);
+	turtleGoTo(t, 150.0f, 400.0f);
 	turtlePenDown(t);
 
 	turtleSetColor(t, 255, 150, 0);
@@ -35,7 +35,7 @@ int main(void){
 	levyVariation(t, 300.0f, 10, from, to);
 	*/
 
-	fractalTreeChallenge(t, 100.0f, 7, 0.7f);
+	fractalTreeChallenge(t, 200.0f, 8, 0.6f);
 
 	turtleAppRun(app);
 	turtleAppDestroy(app);
