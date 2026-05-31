@@ -35,7 +35,7 @@ int main(void){
 	levyVariation(t, 300.0f, 10, from, to);
 	*/
 
-	fractalTreeChallenge(t, 100.0f, 5, 0.9f);
+	fractalTreeChallenge(t, 100.0f, 7, 0.7f);
 
 	turtleAppRun(app);
 	turtleAppDestroy(app);
