@@ -71,6 +71,7 @@ void fractalTreeChallenge(Turtle *turtle, float length, int depth, float proport
 	fractalTreeChallenge(turtle, length * 0.7 * proportion, depth - 1, proportion);
 	
 	turtleLeft(turtle, 30);
+	turtleBackward(turtle, length);
 }
 
 void fractalTreeVariation(Turtle *turtle, float length, int depth, struct color from, struct color to){
