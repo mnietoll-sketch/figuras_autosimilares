@@ -16,7 +16,7 @@ int main(void){
 	turtleSetColor(t, 255, 150, 0);
 	turtleSetSpeed(t, 10.0f);
 	
-	// fractalTree(t, 100.0f, 10, 0.8f, 30);
+	 fractalTreeGeneralized(t, 100.0f, 10, 0.8f, 30);
 	
 	/*
 	struct color from, to;
@@ -34,9 +34,9 @@ int main(void){
 	to = color_init(0.0f, 255.0f, 255.0f);
 	levyVariation(t, 300.0f, 10, from, to);
 	*/
-
+	/*
 	fractalTreeChallenge(t, 200.0f, 8, 0.6f);
-
+	*/
 	turtleAppRun(app);
 	turtleAppDestroy(app);
 	return 0;
