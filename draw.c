@@ -58,14 +58,14 @@ void fractalTree(Turtle *turtle, float length, int depth, float reduction, float
 	turtleBackward(turtle, length);
 }
 
-void fractalChallenge(Turtle *turtle, float length, int depth, float proportion){
+void fractalTreeChallenge(Turtle *turtle, float length, int depth, float proportion){
 	if(depth <= 0 || length < 5.0f)
 		return;
 
 	turtleForward(turtle, length);
 	
 	turtleLeft(turtle, 30);
-	fractalTreeChallenge(turtle, length * 0.7, depth - 1, reduction, proportion);
+	fractalTreeChallenge(turtle, length * 0.7, depth - 1, proportion);
 	
 	turtleRight(turtle, 60);
 	fractalTreeChallenge(turtle, length * 0.7 * proportion, depth - 1, proportion);
