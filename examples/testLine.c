@@ -28,11 +28,14 @@ int main(void){
 	/*
 	levy(t, 200.0f, 6);
 	*/
-
+	/*
 	struct color from, to;
 	from = color_init(255.0f, 0.0f, 0.0f);
 	to = color_init(0.0f, 255.0f, 255.0f);
 	levyVariation(t, 300.0f, 10, from, to);
+	*/
+
+	fractalTreeChallenge(t, 100.0f, 5, 0.9f);
 
 	turtleAppRun(app);
 	turtleAppDestroy(app);
