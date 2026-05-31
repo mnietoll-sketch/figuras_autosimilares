@@ -46,10 +46,10 @@ void fractalTreeGeneralized(Turtle *turtle, float length, int depth, float reduc
 	turtleForward(turtle, length);
 	
 	turtleLeft(turtle, angle);
-	fractalTree(turtle, length * reduction, depth - 1, reduction, angle);
+	fractalTreeGeneralized(turtle, length * reduction, depth - 1, reduction, angle);
 	
 	turtleRight(turtle, angle * 2);
-	fractalTree(turtle, length * reduction, depth - 1, reduction, angle);
+	fractalTreeGeneralized(turtle, length * reduction, depth - 1, reduction, angle);
 	
 	if(depth >= 5)
 		turtleSetColor(turtle, 150.0f, 75.0f, 0.0f);
